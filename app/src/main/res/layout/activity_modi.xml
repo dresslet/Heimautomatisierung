@@ -1,12 +1,12 @@
 <RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorSecondaryText"
-android:padding="0dp">
+    android:padding="0dp">
 
     <TextView
-        android:id="@+id/topField"
+        android:id="@+id/topField2"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:textSize="22sp"
@@ -28,7 +28,7 @@ android:padding="0dp">
         android:background="@color/colorDivider"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_groups"
+        android:id="@+id/recycler_view_modi"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
