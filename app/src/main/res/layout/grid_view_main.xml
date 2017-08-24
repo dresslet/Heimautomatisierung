@@ -19,7 +19,7 @@
             android:textSize="24sp"
             android:textColor="#ffffff"
             android:background="@color/colorAccent"
-            android:gravity="center_horizontal"/>
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/group_device_count"

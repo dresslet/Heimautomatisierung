@@ -1,6 +1,7 @@
 package de.piobyte.dressler.heimautomatisierung.model;
 
 public class hAGroup {
+    private int id;
     private String name;
     private int image;
     private String nameZ;

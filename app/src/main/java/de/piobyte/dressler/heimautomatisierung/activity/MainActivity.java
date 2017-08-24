@@ -1,6 +1,9 @@
 package de.piobyte.dressler.heimautomatisierung.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +18,7 @@ import java.util.List;
 import de.piobyte.dressler.heimautomatisierung.R;
 import de.piobyte.dressler.heimautomatisierung.adapter.MainGridViewAdapter;
 import de.piobyte.dressler.heimautomatisierung.model.hAGroup;
+import de.piobyte.dressler.heimautomatisierung.rest.RestInterfaceTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_device_or_group);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new RestInterfaceTask().execute();
+
+                Snackbar.make(view, "blabla-test", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         topFieldView = (TextView)findViewById(R.id.topField);
 
@@ -44,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
     public void onClickTopField(View v) {
         Intent intent = new Intent(this, ModiActivity.class);
         startActivity(intent);
-
-         topFieldView.setText("Modi");
-        topFieldView.setBackgroundColor(256);
     }
 
     @Override

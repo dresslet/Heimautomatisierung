@@ -31,7 +31,7 @@ public class MainGridViewAdapter extends RecyclerView.Adapter<MainGridViewViewHo
     public void onBindViewHolder(MainGridViewViewHolders holder, int position) {
         holder.groupName.setText(itemList.get(position).getNameZ());
         holder.groupDevicesCount.setText(itemList.get(position).getName());
-        //holder.groupImage.setImageResource(itemList.get(position).getImage());
+        holder.groupName.setBackgroundResource(itemList.get(position).getImage());
     }
 
     @Override

@@ -1,18 +1,17 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSecondaryText"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="0dp">
 
     <TextView
         android:id="@+id/topField2"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
+        android:layout_height="30dp"
         android:textSize="22sp"
         android:onClick="onClickTopField"
         android:clickable="true"
-        android:text="Gruppen"
+        android:text="Routinen"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorIcons"/>
 
@@ -24,13 +23,21 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="30dp"
         android:background="@color/colorDivider"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_modi"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_modi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</android.support.design.widget.CoordinatorLayout>
