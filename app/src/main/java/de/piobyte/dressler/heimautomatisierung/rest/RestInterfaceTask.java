@@ -35,7 +35,7 @@ public class RestInterfaceTask extends AsyncTask<String, Void, String> {
         URL endPoint;
         String result = null;
         try {
-            endPoint = new URL("http://10.2.10.102:8123/api/states");
+            endPoint = new URL("http://10.2.10.102:8123/api/states/sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management");
             HttpURLConnection httpclient = (HttpURLConnection) endPoint.openConnection();
             httpclient.setRequestProperty("x-ha-access", "PASSWORD");
             httpclient.setRequestMethod("GET");
