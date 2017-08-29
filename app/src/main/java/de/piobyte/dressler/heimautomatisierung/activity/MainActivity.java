@@ -1,5 +1,6 @@
 package de.piobyte.dressler.heimautomatisierung.activity;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import de.piobyte.dressler.heimautomatisierung.R;
 import de.piobyte.dressler.heimautomatisierung.adapter.MainGridViewAdapter;
+import de.piobyte.dressler.heimautomatisierung.dialog.NewDialog;
 import de.piobyte.dressler.heimautomatisierung.model.hAGroup;
 import de.piobyte.dressler.heimautomatisierung.rest.RestInterfaceTask;
 
@@ -35,10 +37,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new RestInterfaceTask().execute();
+                DialogFragment dialog = new NewDialog();
+                dialog.show(getFragmentManager(), "Was möchten Sie hinzufügen?");                //new RestInterfaceTask().execute();
 
-                Snackbar.make(view, "blabla-test", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
             }
         });
 

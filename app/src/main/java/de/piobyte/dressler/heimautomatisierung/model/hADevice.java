@@ -6,9 +6,10 @@ import java.util.List;
 public class hADevice {
     private int id;
     private String name;
+    private String friendlyName;
     private boolean status;
     private int icon;
-    private List<String> attributes;
+    //private List<String> attributes;
 
 
     public hADevice(String name, int icon) {
