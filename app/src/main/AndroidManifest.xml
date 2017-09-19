@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".activity.ModiActivity"
             android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.DeviceActivity"
+            android:parentActivityName=".activity.MainActivity" />
 
     </application>
 

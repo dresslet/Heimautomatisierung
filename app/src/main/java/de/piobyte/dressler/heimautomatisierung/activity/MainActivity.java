@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_device_or_group);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_group);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickTopField(View v) {
-        Intent intent = new Intent(this, ModiActivity.class);
+        Intent intent = new Intent(this, DeviceActivity.class);
         startActivity(intent);
     }
 
