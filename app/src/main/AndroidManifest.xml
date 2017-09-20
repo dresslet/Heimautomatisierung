@@ -21,6 +21,8 @@
             android:parentActivityName=".activity.MainActivity" />
         <activity android:name=".activity.DeviceActivity"
             android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.LoginActivity"
+            android:parentActivityName=".activity.MainActivity" />
 
     </application>
 

@@ -22,6 +22,7 @@ class DeviceListViewViewHolders extends RecyclerView.ViewHolder implements View.
         itemView.setOnClickListener(this);
         deviceName = (TextView) itemView.findViewById(R.id.device_list_view_text);
         deviceDescription = (TextView) itemView.findViewById(R.id.device_list_view_small_text);
+        deviceImage = (ImageView) itemView.findViewById(R.id.device_icon);
     }
 
     @Override

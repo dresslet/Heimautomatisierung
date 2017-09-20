@@ -12,10 +12,19 @@ public class hADevice {
     //private List<String> attributes;
 
 
-    public hADevice(String name, int icon) {
+    public hADevice(String name, String friendlyName, int icon) {
         this.name = name;
         this.icon = icon;
+        this.friendlyName = friendlyName;
         this.status = false;
+    }
+
+    public String getFriendlyName() {
+        return friendlyName;
+    }
+
+    public void setFriendlyName(String friendlyName) {
+        this.friendlyName = friendlyName;
     }
 
     public String getName() {

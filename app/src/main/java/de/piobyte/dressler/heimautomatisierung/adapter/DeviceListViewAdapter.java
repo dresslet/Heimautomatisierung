@@ -35,8 +35,8 @@ public class DeviceListViewAdapter extends RecyclerView.Adapter<DeviceListViewVi
     @Override
     public void onBindViewHolder(DeviceListViewViewHolders holder, int position) {
         holder.deviceName.setText(itemList.get(position).getName());
-        holder.deviceDescription.setText(itemList.get(position).getName());
-        //holder.deviceImage.setBackgroundResource(itemList.get(position).getIcon());
+        holder.deviceDescription.setText(itemList.get(position).getFriendlyName());
+        holder.deviceImage.setBackgroundResource(itemList.get(position).getIcon());
     }
 
     @Override
