@@ -2,6 +2,7 @@ package de.piobyte.dressler.heimautomatisierung.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,18 +17,20 @@ import de.piobyte.dressler.heimautomatisierung.model.hAGroup;
  * Created by Piobyte-Gast on 19.09.2017.
  */
 
-public class DeviceListViewAdapter extends RecyclerView.Adapter<DeviceListViewViewHolders>{
+public class DeviceListViewAdapter extends RecyclerView.Adapter<DeviceListViewViewHolders> {
     private List<hADevice> itemList;
     private Context mContext;
+    private int layout;
 
-    public DeviceListViewAdapter(Context context, List<hADevice> itemList) {
+    public DeviceListViewAdapter(Context context, int layout, List<hADevice> itemList) {
         this.itemList = itemList;
         this.mContext = context;
+        this.layout = layout;
     }
 
     @Override
     public DeviceListViewViewHolders onCreateViewHolder(ViewGroup parent, int viewType) {
-        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_device, null);
+        View layoutView = LayoutInflater.from(parent.getContext()).inflate(layout, null);
         return new DeviceListViewViewHolders(layoutView);
 
     }

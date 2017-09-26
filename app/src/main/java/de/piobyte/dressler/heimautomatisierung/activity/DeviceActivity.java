@@ -55,7 +55,7 @@ public class DeviceActivity extends AppCompatActivity {
 
         List<hADevice> entryList = getListItemData();
 
-        DeviceListViewAdapter rcAdapter = new DeviceListViewAdapter(this.getApplicationContext(), entryList);
+        DeviceListViewAdapter rcAdapter = new DeviceListViewAdapter(this.getApplicationContext(), R.layout.list_view_device, entryList);
         recyclerView.setAdapter(rcAdapter);
     }
 

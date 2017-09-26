@@ -9,7 +9,12 @@ public class hADevice {
     private String friendlyName;
     private boolean status;
     private int icon;
-    //private List<String> attributes;
+    private List<String> attributes;
+
+    public hADevice(){
+        this.name = "newDevice";
+        this.status = false;
+    }
 
 
     public hADevice(String name, String friendlyName, int icon) {
@@ -17,6 +22,14 @@ public class hADevice {
         this.icon = icon;
         this.friendlyName = friendlyName;
         this.status = false;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFriendlyName() {
@@ -49,5 +62,13 @@ public class hADevice {
 
     public void setIcon(int icon) {
         this.icon = icon;
+    }
+
+    public List<String> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<String> attributes) {
+        this.attributes = attributes;
     }
 }
