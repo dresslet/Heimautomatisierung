@@ -75,16 +75,9 @@ public class ModiActivity extends AppCompatActivity {
     private List<hAModi> getListItemData(){
         List<hAModi> listViewItems = new ArrayList<hAModi>();
         listViewItems.add(new hAModi("Zeitplan Heizung", R.drawable.one, true));
-        listViewItems.add(new hAModi("Urlaubsmodus", R.drawable.two, false));
+        listViewItems.add(new hAModi("Urlaubsmodus", R.drawable.one, false));
         listViewItems.add(new hAModi("Kinder Fernsehplan", R.drawable.three, false));
-        listViewItems.add(new hAModi("Test", R.drawable.two, true));
         listViewItems.add(new hAModi("Gartenbewässerung", R.drawable.one, true));
-        listViewItems.add(new hAModi("Jalousieregelung", R.drawable.one, true));
-        listViewItems.add(new hAModi("Wochendendmodus", R.drawable.one, false));
-        listViewItems.add(new hAModi("Wochenmodus", R.drawable.one, true));
-        listViewItems.add(new hAModi("Jalousieregelung", R.drawable.one, true));
-        listViewItems.add(new hAModi("Wochendendmodus", R.drawable.one, false));
-        listViewItems.add(new hAModi("Wochenmodus", R.drawable.one, true));
 
         return listViewItems;
     }

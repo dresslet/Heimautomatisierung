@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogFragment dialog = new NewDialog();
-                dialog.show(getFragmentManager(), "Was möchten Sie hinzufügen?");                //new RestInterfaceTask().execute();
-
+                Intent intent = new Intent(getApplicationContext(), NewGroupActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickTopField(View v) {
-        Intent intent = new Intent(this, NewGroupActivity.class);
+        Intent intent = new Intent(this, NewDeviceActivity.class);
         startActivity(intent);
     }
 
@@ -77,14 +76,9 @@ public class MainActivity extends AppCompatActivity {
         listViewItems.add(new hAGroup("3 aktive Geräte", R.drawable.two, "Schlafzimmer"));
         listViewItems.add(new hAGroup("12 aktive Geräte", R.drawable.three, "Keller"));
         listViewItems.add(new hAGroup("567 aktive Geräte", R.drawable.one, "Küche"));
-        listViewItems.add(new hAGroup("0 aktive Geräte", R.drawable.one, "Dachboden"));
+        listViewItems.add(new hAGroup("99 aktive Geräte", R.drawable.one, "Dachboden"));
         listViewItems.add(new hAGroup("2 aktive Geräte", R.drawable.two, "Garage"));
-        listViewItems.add(new hAGroup("4 aktive Geräte", R.drawable.one, "Wohnzimmer"));
-        listViewItems.add(new hAGroup("3 aktive Geräte", R.drawable.two, "Schlafzimmer"));
-        listViewItems.add(new hAGroup("12 aktive Geräte", R.drawable.three, "Keller"));
-        listViewItems.add(new hAGroup("567 aktive Geräte", R.drawable.one, "Küche"));
-        listViewItems.add(new hAGroup("0 aktive Geräte", R.drawable.one, "Dachboden"));
-        listViewItems.add(new hAGroup("2 aktive Geräte", R.drawable.two, "Garage"));
+
 
         return listViewItems;
     }

@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +22,10 @@
         <activity android:name=".activity.DeviceActivity"
             android:parentActivityName=".activity.MainActivity" />
         <activity android:name=".activity.NewGroupActivity"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.NewDeviceActivity"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity"
             android:parentActivityName=".activity.MainActivity" />
 
     </application>

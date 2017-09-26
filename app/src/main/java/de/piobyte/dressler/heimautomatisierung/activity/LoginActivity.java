@@ -1,6 +1,7 @@
 package de.piobyte.dressler.heimautomatisierung.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,10 +39,10 @@ public class LoginActivity extends AppCompatActivity{
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ipAdressText.getText().toString().equals("10.1.1") &&
+                if(ipAdressText.getText().toString().equals("1.") &&
                         passwordText.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(),
-                            "Anmeldungsversuch...",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
                 }

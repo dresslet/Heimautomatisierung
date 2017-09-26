@@ -82,19 +82,6 @@ public class DeviceActivity extends AppCompatActivity {
         listViewItems.add(new hADevice("Steckdosen Küche", "Heizunganlage für das Wohnzimmer", R.drawable.drop));
         listViewItems.add(new hADevice("Flurlicht", "Heizunganlage für das Wohnzimmer", R.drawable.recycling));
         listViewItems.add(new hADevice("Internet Kinder", "Heizunganlage für das Wohnzimmer", R.drawable.eye));
-        listViewItems.add(new hADevice("3 aktive Geräte", "Heizunganlage für das Wohnzimmer", R.drawable.washer));
-        listViewItems.add(new hADevice("12 aktive Geräte", "Heizunganlage für das Wohnzimmer", R.drawable.bulb));
-        listViewItems.add(new hADevice("567 aktive Geräte", "Heizunganlage für das Wohnzimmer", R.drawable.plug));
-        listViewItems.add(new hADevice("Heizung Wohnzimmer", "Heizunganlage für das Wohnzimmer", R.drawable.heater));
-        listViewItems.add(new hADevice("Heizung Schlafzimmer", "Heizunganlage für das Wohnzimmer", R.drawable.temperature));
-        listViewItems.add(new hADevice("Heizung Bad", "Heizunganlage für das Wohnzimmer", R.drawable.tv));
-        listViewItems.add(new hADevice("Fernseher Wohnzimmer", "Heizunganlage für das Wohnzimmer", R.drawable.electric_range));
-        listViewItems.add(new hADevice("Steckdosen Küche", "Heizunganlage für das Wohnzimmer", R.drawable.drop));
-        listViewItems.add(new hADevice("Flurlicht", "Heizunganlage für das Wohnzimmer", R.drawable.recycling));
-        listViewItems.add(new hADevice("Internet Kinder", "Heizunganlage für das Wohnzimmer", R.drawable.eye));
-        listViewItems.add(new hADevice("3 aktive Geräte", "Heizunganlage für das Wohnzimmer", R.drawable.washer));
-        listViewItems.add(new hADevice("12 aktive Geräte", "Heizunganlage für das Wohnzimmer", R.drawable.bulb));
-        listViewItems.add(new hADevice("567 aktive Geräte", "Heizunganlage für das Wohnzimmer", R.drawable.plug));
 
         return listViewItems;
     }

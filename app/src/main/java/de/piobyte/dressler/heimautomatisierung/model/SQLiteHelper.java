@@ -27,6 +27,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String KEY_DEVICE_ID = "id";
     private static final String KEY_DEVICE_NAME = "deviceName";
     private static final String KEY_DEVICE_STATUS = "deviceStatus";
+    private static final String KEY_DEVICE_ICON = "deviceIcon";
     private static final String KEY_DEVICE_ATTRIBUTES = "deviceAttributes";
 
     // group Table Columns
@@ -324,6 +325,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(POSTS_SELECT_QUERY, null);
         try {
             device.setName(cursor.getString(cursor.getColumnIndex(KEY_DEVICE_NAME)));
+            device.setIcon(cursor.getInt(cursor.getColumnIndex(KEY_DEVICE_ICON)));
+            boolean isOn = cursor.getInt(cursor.getColumnIndex(KEY_DEVICE_ATTRIBUTES)) > 0;
+            device.setStatus(isOn);
 
         } catch (Exception e) {
             Log.d("database", "Error while trying to get list nr. " + id + " from database");
@@ -387,6 +391,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             db.endTransaction();
         }
     }
+
 
 }
 
