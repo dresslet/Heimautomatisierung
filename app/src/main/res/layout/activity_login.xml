@@ -4,35 +4,40 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/ip_adress_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/password_label"
-        android:layout_width="wrap_content"
+        android:id="@+id/login_text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"/>
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_margin="20dp"/>
 
     <EditText
         android:id="@+id/ip_adress"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/ip_adress_label"/>
+        android:hint="IP-Adresse"
+        android:inputType="number"
+        android:digits="0123456789."
+        android:layout_margin="5dp"
+        android:layout_below="@+id/login_text"/>
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/password_label"/>
+        android:inputType="textPassword"
+        android:layout_margin="5dp"
+        android:hint="Passwort"
+        android:layout_below="@+id/ip_adress" />
 
     <Button
         android:id = "@+id/login_button"
+        android:background="@color/colorPrimary"
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
         android:onClick = "login"
         android:text = "Login"
-        android:layout_marginTop="100dp"
+        android:layout_centerInParent="true"
         />
 
 </RelativeLayout>
