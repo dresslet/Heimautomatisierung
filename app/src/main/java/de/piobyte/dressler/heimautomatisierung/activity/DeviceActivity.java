@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -32,7 +34,7 @@ public class DeviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        getSupportActionBar().setTitle("Geräteübersicht");
         setContentView(R.layout.activity_device);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_device);
@@ -40,7 +42,7 @@ public class DeviceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DialogFragment dialog = new NewDialog();
-                dialog.show(getFragmentManager(), "Was möchten Sie hinzufügen?");                //new RestInterfaceTask().execute();
+                dialog.show(getFragmentManager(), "Was möchten Sie hinzufügen?");
 
             }
         });
@@ -64,15 +66,6 @@ public class DeviceActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     private List<hADevice> getListItemData(){
         List<hADevice> listViewItems = new ArrayList<hADevice>();
         listViewItems.add(new hADevice("Heizung Wohnzimmer", "Heizunganlage für das Wohnzimmer", R.drawable.heater));
@@ -84,6 +77,32 @@ public class DeviceActivity extends AppCompatActivity {
         listViewItems.add(new hADevice("Internet Kinder", "Heizunganlage für das Wohnzimmer", R.drawable.eye));
 
         return listViewItems;
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.optionsmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.devices:
+                Intent intent = new Intent(getApplicationContext(), DeviceActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.groups:
+                Intent intentb = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intentb);
+                return true;
+            case R.id.modi:
+                Intent intentc = new Intent(getApplicationContext(), ModiActivity.class);
+                startActivity(intentc);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

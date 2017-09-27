@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -30,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("Gruppenübersicht");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_group);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,26 +64,43 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     private List<hAGroup> getListItemData(){
         List<hAGroup> listViewItems = new ArrayList<hAGroup>();
-        listViewItems.add(new hAGroup("4 aktive Geräte", R.drawable.one, "Wohnzimmer"));
-        listViewItems.add(new hAGroup("3 aktive Geräte", R.drawable.two, "Schlafzimmer"));
+        listViewItems.add(new hAGroup("4 aktive Geräte", R.drawable.three, "Wohnzimmer"));
+        listViewItems.add(new hAGroup("3 aktive Geräte", R.drawable.three, "Schlafzimmer"));
         listViewItems.add(new hAGroup("12 aktive Geräte", R.drawable.three, "Keller"));
-        listViewItems.add(new hAGroup("567 aktive Geräte", R.drawable.one, "Küche"));
-        listViewItems.add(new hAGroup("99 aktive Geräte", R.drawable.one, "Dachboden"));
-        listViewItems.add(new hAGroup("2 aktive Geräte", R.drawable.two, "Garage"));
+        listViewItems.add(new hAGroup("567 aktive Geräte", R.drawable.three, "Küche"));
+        listViewItems.add(new hAGroup("99 aktive Geräte", R.drawable.three, "Dachboden"));
+        listViewItems.add(new hAGroup("2 aktive Geräte", R.drawable.three, "Garage"));
 
 
         return listViewItems;
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.optionsmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.devices:
+                Intent intent = new Intent(getApplicationContext(), DeviceActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.groups:
+                Intent intentb = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intentb);
+                return true;
+            case R.id.modi:
+                Intent intentc = new Intent(getApplicationContext(), ModiActivity.class);
+                startActivity(intentc);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/groups"
+        android:title="Gruppenübersicht"/>
+    <item android:id="@+id/devices"
+        android:title="Geräteübersicht" />
+    <item android:id="@+id/modi"
+        android:title="Automatismen"/>
+</menu>

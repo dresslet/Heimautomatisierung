@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //getSupportActionBar().show();
+        getSupportActionBar().setTitle("Heimautomatisierung Login");
 
         loginButton = (Button) findViewById(R.id.login_button);
         ipAdressText = (EditText) findViewById(R.id.ip_adress);
@@ -69,7 +69,6 @@ public class LoginActivity extends AppCompatActivity{
                 super.onPostExecute(result);
                 if (!apiConnStat) {
                     Toast.makeText(getApplicationContext(), "Falsche Logindaten oder keine Netzwerkverbindung", Toast.LENGTH_LONG).show();
-                    //apiConnStat = false;
                 }else{
                     Toast.makeText(getApplicationContext(), "Verbindung erfolgreich! - Sie sind eingeloggt.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);

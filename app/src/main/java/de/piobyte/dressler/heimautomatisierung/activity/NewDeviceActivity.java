@@ -14,7 +14,6 @@ import de.piobyte.dressler.heimautomatisierung.R;
 
 public class NewDeviceActivity extends AppCompatActivity{
 
-    Button loginButton;
     //EditText ipAdressText, passwordText;
     ProgressBar inclusionProgressBar;
     TextView newDeviceText, progressBarText;
@@ -24,7 +23,7 @@ public class NewDeviceActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_device);
-        getSupportActionBar().show();
+        getSupportActionBar().setTitle("Neues Gerät anlegen");
 
         inclusionProgressBar = (ProgressBar)findViewById(R.id.inclusion_bar);
         inclusionProgressBar.setMax(150);

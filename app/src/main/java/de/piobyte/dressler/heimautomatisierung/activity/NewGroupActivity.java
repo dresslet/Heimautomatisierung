@@ -1,8 +1,13 @@
 package de.piobyte.dressler.heimautomatisierung.activity;
 
+import android.bluetooth.BluetoothClass;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Adapter;
@@ -22,8 +27,6 @@ import de.piobyte.dressler.heimautomatisierung.model.hADevice;
 
 public class NewGroupActivity extends AppCompatActivity{
 
-
-    Button loginButton;
     //EditText ipAdressText, passwordText;
     TextView newGroupText, newGroupTextlv;
     ListView deviceListView;
@@ -32,7 +35,7 @@ public class NewGroupActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_group);
-        getSupportActionBar().show();
+        getSupportActionBar().setTitle("Neue Gruppe");
 
         newGroupTextlv = (TextView) findViewById(R.id.new_group_text_lv);
         newGroupText = (TextView) findViewById(R.id.new_group_text);
@@ -75,4 +78,29 @@ public class NewGroupActivity extends AppCompatActivity{
 
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.optionsmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.devices:
+                Intent intent = new Intent(getApplicationContext(), DeviceActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.groups:
+                Intent intentb = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intentb);
+                return true;
+            case R.id.modi:
+                Intent intentc = new Intent(getApplicationContext(), ModiActivity.class);
+                startActivity(intentc);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
